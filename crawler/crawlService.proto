@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package crawlService;
+
+//the request message contains
+message crawlerRequest {
+  string name = 1;
+  bool crawl = 2;
+}
+
+//the response message contains
+message crawlerResponse{
+  string name = 1;
+  bool crawl = 2;  
+}
+
+//crawler service defination
+service Crawler{
+  //sets crawler
+  rpc setCrawler(crawlerRequest) returns (crawlerResponse){}
+}
